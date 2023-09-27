@@ -1,5 +1,5 @@
 <template>
-  <input v-model="internalValue" @input="$emit('input', internalValue)" />
+  <v-text-field name="not-pass" type="number" v-model="internalValue" @input="$emit('input', internalValue)" />
 </template>
 
 <script setup>
@@ -22,4 +22,8 @@ watch(
 )
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-text-field input {
+  font-size: 10em;
+}
+</style>

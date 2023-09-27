@@ -1,19 +1,24 @@
 {
-  "name": "test",
+  "name": "currency_output",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "5.9.55",
     "lodash": "^4.17.21",
     "money": "^0.2.0",
-    "vue": "^3.3.4"
+    "roboto-fontface": "*",
+    "vue": "^3.3.4",
+    "vuetify": "^3.0.0-beta.0",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
@@ -25,6 +30,8 @@
     "jsdom": "^22.1.0",
     "prettier": "^3.0.3",
     "vite": "^4.4.9",
-    "vitest": "^0.34.4"
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vitest": "^0.34.4",
+    "vue-cli-plugin-vuetify": "~2.5.8"
   }
 }

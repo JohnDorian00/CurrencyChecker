@@ -1,10 +1,18 @@
 <template>
-  <main>
-    <div class="currency-block" v-for="(value, currency) in currencyList" :key="currency">
-      {{ currency }}
-      <CurrencyOutput :value="value" @input="onInput($event, currency)" @click="clearInput(currency)" />
-    </div>
-  </main>
+  <v-app>
+    <v-main class="d-flex flex-column justify-center align-center fill-height">
+      <v-container v-for="(value, currency) in currencyList" :key="currency">
+        <v-row align="center" justify="center">
+          <v-text class="text-h4">{{ currency }}</v-text>
+        </v-row>
+        <v-row align="center" justify="center">
+          <v-col>
+            <CurrencyOutput :value="value" @input="onInput($event, currency)" @click="clearInput(currency)" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup>
@@ -18,7 +26,6 @@ const currencyList = ref({
   RSD: '',
   RUB: ''
 })
-
 const debounceSetValue = debounce((value, currency) => {
   updateAllValues(value, currency)
 }, 500)

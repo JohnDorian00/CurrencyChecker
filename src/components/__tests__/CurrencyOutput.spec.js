@@ -1,6 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 import CurrencyOutput from '../CurrencyOutput.vue'
+
+const vuetify = createVuetify({
+  components,
+  directives
+})
 
 describe('CurrencyOutput', () => {
   let wrapper
@@ -10,6 +18,9 @@ describe('CurrencyOutput', () => {
       propsData: {
         value: '123.12',
         'onUpdate:modelValue': e => wrapper.setProps({ value: e })
+      },
+      global: {
+        plugins: [vuetify]
       }
     })
   })
