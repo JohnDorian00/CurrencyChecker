@@ -22,8 +22,4 @@ watch(
 )
 </script>
 
-<style scoped>
-.v-text-field input {
-  font-size: 10em;
-}
-</style>
+<style scoped></style>

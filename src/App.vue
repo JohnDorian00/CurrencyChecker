@@ -20,7 +20,10 @@ import { ref } from 'vue'
 import { debounce } from 'lodash'
 import CurrencyOutput from './components/CurrencyOutput.vue'
 
+const delay = 1000
+
 const currencyList = ref({
+  USD: '',
   EUR: '',
   TRY: '',
   RSD: '',
@@ -28,7 +31,7 @@ const currencyList = ref({
 })
 const debounceSetValue = debounce((value, currency) => {
   updateAllValues(value, currency)
-}, 500)
+}, delay)
 
 const updateAllValues = (value, currency) => {
   for (let key in currencyList.value) {
@@ -47,8 +50,4 @@ const clearInput = key => {
 }
 </script>
 
-<style scoped>
-.currency-block {
-  display: flex;
-}
-</style>
+<style scoped></style>
